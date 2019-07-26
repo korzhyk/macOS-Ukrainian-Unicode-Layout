@@ -5,8 +5,8 @@
 
 1. Завантажте архів гілки [master](archive/master.zip)
 2. Виберіть каталог для розміщення розкладки:
-2.1. Лише для поточного користувача: `~/Library/Keyboard Layouts`
-2.2. Для усіх користувачів: `/Library/Keyboard Layouts`
+   1. Лише для поточного користувача: `~/Library/Keyboard Layouts`
+   2. Для усіх користувачів: `/Library/Keyboard Layouts`
 3. Розпакуйте архів у вибраний каталог
 4. Додайте до назви розпакованої папки суфікс `.bundle` (*Ukrainian-Unicode-Layout.bundle*)
 
