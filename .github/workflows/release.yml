@@ -21,13 +21,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # create dmg
-      - name: hdiutil
-        run: hdiutil create "${{ env.Name }} ${{ github.event.release.tag_name }}.dmg" -volname "${{ env.Name }} ${{ github.event.release.tag_name }}" -fs HFS+ -srcfolder .
+      # create zip
+      - name: zip
+        run: zip -r "${{ env.Name }}.bundle.zip" -9 . -x ".*"
 
-      # upload dmg
+      # upload zip
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
         with:
-          name: "${{ env.Name }} ${{ github.event.release.tag_name }}.dmg"
-          path: '*.dmg'
+          name: "${{ env.Name }}.zip"
+          path: '*.zip'
