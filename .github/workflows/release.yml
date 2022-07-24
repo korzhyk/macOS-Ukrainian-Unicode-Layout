@@ -21,13 +21,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # create zip
       - name: zip
         run: zip -r "${{ env.Name }}.bundle.zip" -9 . -x ".*"
 
-      # upload zip
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v3
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          name: "${{ env.Name }}.zip"
-          path: '*.zip'
+          files: '*.zip'
