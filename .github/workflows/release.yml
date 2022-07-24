@@ -23,11 +23,11 @@ jobs:
 
       # create dmg
       - name: hdiutil
-        run: hdiutil create "$Name ${{ github.ref }}.dmg" -volname "$Name ${{ github.ref }}" -fs HFS+ -srcfolder .
+        run: hdiutil create "${{ env.Name }} ${{ github.ref }}.dmg" -volname "${{ env.Name }} ${{ github.ref }}" -fs HFS+ -srcfolder .
 
       # upload dmg
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
         with:
-          name: "$Name ${{ github.ref }}.dmg"
+          name: "${{ env.Name }} ${{ github.ref }}.dmg"
           path: '*.dmg'
