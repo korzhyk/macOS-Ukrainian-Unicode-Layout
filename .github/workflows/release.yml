@@ -19,7 +19,7 @@ jobs:
         with:
           type: 'zip'
           filename: 'Ukrainian-Unicode.bundle.zip'
-          exclusions: '.*'
+          exclusions: '*.git*'
 
       - name: Publich
         uses: softprops/action-gh-release@v1
